@@ -6,6 +6,7 @@ let student = {
     isPassed:true
 }
 
-for(let val in student){
-    console.log(val)
+for(let key in student){
+    console.log(key);
+    console.log(student[key]);
 }
