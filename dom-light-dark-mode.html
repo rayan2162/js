@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: white; color: black;">
+
+    <div>
+        <h1>
+            Light mode
+        </h1>
+    </div>
+    
+    <br>
+
+    <a href="">link</a>
+
+    <br>
+    <br>
+
+    <!-- Button to show an alert message -->
+    <button onclick="msg()">click</button>
+
+    <!-- Button to toggle dark mode -->
+    <button onclick="darkmode()">Enable Dark Mode</button>
+
+    <!-- Example paragraph (Note: <h2> should not be inside <p>, but keeping original) -->
+    <p>
+        <h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati a corrupti veritatis laudantium soluta facere, cupiditate hic suscipit sequi exercitationem nobis ab magni quae? Sapiente facilis beatae voluptates mollitia natus.
+        </h2>
+    </p>
+
+    <script>
+        // -------------------------------
+        // JavaScript Concepts Used Here
+        // -------------------------------
+        // 1. Functions: reusable blocks of code (msg() and darkmode())
+        // 2. DOM Manipulation: accessing and changing HTML elements
+        //    - document.body, document.querySelector, document.querySelectorAll
+        // 3. Conditional Statements: if...else to toggle dark/light mode
+        // 4. Properties of Elements: .textContent and .style
+        // 5. console.log / console.dir: inspecting elements in browser console
+
+        // Function to show a simple alert
+        function msg (){
+            alert("button clicked"); // alert() shows a popup message
+        }
+
+        // Logging the body element to the console
+        console.dir(document.body);       // Shows the body object with its properties
+        console.log(document.body);       // Logs the body element
+        console.log(document.body.childNodes[1]); // Logs the second child node of body
+
+        // Function to toggle dark mode on/off
+        function darkmode(){
+            // Check current background color
+            if(document.body.style.background === "white"){
+                // Switch to Dark Mode
+                document.querySelectorAll("button")[1].textContent = "Enable Light mode"; // Change button text
+                document.querySelector("h1").textContent = "Dark mode"; // Change heading text
+                document.body.style.background = "black"; // Change background color
+                document.body.style.color = "white"; // Change text color
+            } else {
+                // Switch back to Light Mode
+                document.querySelectorAll("button")[1].textContent = "Enable Dark mode"; // Change button text
+                document.querySelector("h1").textContent = "Light Mode"; // Change heading text
+                document.body.style.background = "white"; // Change background color
+                document.body.style.color = "black"; // Change text color
+            }
+        }
+    </script>
+    
+</body>
+</html>

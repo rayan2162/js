@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+
+    <!-- Header elements -->
+    <h1 id="heading">This is the header</h1>
+    <h2 id="subheading">this is sub heading</h2>
+
+    <!-- returns html collection, collection is something like an array -->
+    <h3 class="textdark">para1</h3>
+    <p class="textdark">para2</p>
+    <i class="textdark">para3</i>
+
+    <script>
+        // -----------------------------
+        // DOM Manipulation Concepts
+        // -----------------------------
+        // 1. getElementById -> selects element by its id
+        // 2. getElementsByClassName -> returns HTMLCollection (like an array) of all elements with that class
+        // 3. getElementsByTagName -> returns HTMLCollection of all elements with that tag
+        // 4. textContent -> changes text inside an element
+        // 5. innerHTML -> changes text AND HTML inside an element
+        // 6. style.property -> changes CSS styles directly
+
+        // Select the header using its ID
+        let heading = document.getElementById("heading");
+        console.log(heading); // log the element in console
+        heading.textContent = "The heading is changed by DOM manipulation - textContent";
+
+        // Select the subheading using its ID
+        let subheading = document.getElementById("subheading");
+        subheading.innerHTML = "<span style='color:red'>Changed by innerHTML</span>";
+
+        // Select all elements with class 'textdark'
+        // returns html collection, collection is something like an array
+        let classes = document.getElementsByClassName("textdark");
+        for(let i = 0; i < classes.length; i++){
+            classes[i].style.color = "green"; // change text color
+        }
+
+        // Select all <p> tags
+        let tags = document.getElementsByTagName("p");
+        // Make sure the loop uses 'tags.length', not 'classes.length'
+        for(let i = 0; i < tags.length; i++){
+            tags[i].style.fontSize = "2rem"; // change font size
+        }
+    </script>
+
+</body>
+</html>
