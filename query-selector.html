@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    document.querySelector -> returns first element
+    document.querySelectorAll -> returns node list
+    -->
+
+    <div>
+        hello
+    </div>
+    <div class="first">world</div>
+    <div id="second">
+        header
+    </div>
+
+
+    <script>
+        let firstelement = document.querySelector('div'); // selected by tag
+        firstelement.textContent = "CHANGED"
+        
+        let secondelement = document.querySelector('.first'); // selected by class
+        secondelement.textContent = "changed";
+
+        let thirdelement = document.querySelector('#second'); // selected by id
+        thirdelement.textContent = "changed";
+
+        let allelement = document.querySelectorAll("div");
+        for(let i=0; i<allelement.length; i++){
+            allelement[i].style.color = "green";
+        }
+    </script>
+
+</body>
+</html>
