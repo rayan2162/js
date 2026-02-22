@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo v1</title>
+</head>
+<body>
+
+    <!-- Input field where the user types a task -->
+    <input id="task" type="text">
+
+    <!-- Button that calls the save() function when clicked -->
+    <button onclick="save()">Save</button>
+
+    <!-- This div will contain all our tasks -->
+    <div id="list"></div>
+
+    <script>
+
+        // This function runs when the button is clicked
+        function save() {
+
+            // 1️⃣ Get the input element (the text box)
+            const inputTask = document.querySelector("#task");
+
+            // 2️⃣ Get the div where we will display tasks
+            const listrender = document.querySelector('#list');
+            
+            // 3️⃣ Create a new div for ONE task
+            // Each task will be inside its own div
+            const taskItem = document.createElement('div');
+
+            // 4️⃣ Create a checkbox
+            const checkbox = document.createElement('input');
+
+            // Change the input type to checkbox
+            checkbox.type = "checkbox";
+
+            // 5️⃣ Add the checkbox inside the task div
+            taskItem.appendChild(checkbox);
+
+            // 6️⃣ Add the text from the input field
+            // inputTask.value is what the user typed
+            taskItem.appendChild(
+                document.createTextNode(inputTask.value)
+            );
+
+            // 7️⃣ Add the whole task (checkbox + text)
+            // into the main list div
+            listrender.appendChild(taskItem);
+
+            // 8️⃣ Clear the input box after adding
+            inputTask.value = "";
+        }
+
+    </script>
+</body>
+</html>
