@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click me</button>
+    <h1>You have clicked <span>0</span> times</h1>
+</body>
+    <script>
+        let btn = document.querySelector("button");
+        let cnt = 0;
+        btn.onclick=()=>{
+            cnt++;
+            let counter = document.querySelector('span');
+            counter.textContent = cnt;
+        }
+    </script>
+</html>
